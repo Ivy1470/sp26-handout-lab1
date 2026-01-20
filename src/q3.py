@@ -17,7 +17,7 @@ As always, make sure to implement tests in the tests directory.
 # California income tax rates: https://www.hrblock.com/tax-center/filing/states/california-tax-rates
 # Massachusetts income tax rate: 5% for everyone
 # New York state income tax rates: https://www.nerdwallet.com/article/taxes/new-york-state-tax
-def calculate_progressive_tax(income: int, brackets: list) -> float:
+def calculate_progressive_tax(income: int, brackets: list) -> float:   # type: ignore
     """Helper function to calculate tax based on progressive tax brackets
     
     Parameters
