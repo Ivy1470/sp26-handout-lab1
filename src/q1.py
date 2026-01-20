@@ -26,4 +26,27 @@ def validate_password(password: str) -> bool:
     bool
         True if the password is valid, and false otherwise
     """
-    pass
+    unmet = []
+
+    if len(password) < 8:
+        unmet.append("Requirement 1 not met: at least 8 characters long")
+
+    if not any(ch.isupper() for ch in password):
+        unmet.append("Requirement 2 not met: at least one uppercase letter")
+
+    if not any(ch.islower() for ch in password):
+        unmet.append("Requirement 3 not met: at least one lowercase letter")
+
+    if not any(ch.isdigit() for ch in password):
+        unmet.append("Requirement 4 not met: at least one digit")
+
+    special = set("!@#$%^&*")
+    if not any(ch in special for ch in password):
+        unmet.append("Requirement 5 not met: at least one special character (!@#$%^&*)")
+
+    if unmet:
+        for msg in unmet:
+            print(msg)
+        return False
+
+    return True

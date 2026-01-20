@@ -15,4 +15,7 @@ def set_password() -> None:
        (Keep repeating until password is valid)
     """
     # This function will require calling validate_password from q1
-    pass
+while True:
+        password = input("Enter a password: ")
+        if validate_password(password):
+            break
